@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', function () {
         return view('welcome');
-    });
-    Route::get('/dashboard', [UserController::class, 'getDashboard']);
+    })->name('home');
+    Route::get('/dashboard', [UserController::class, 'getDashboard'])->middleware('auth');
 
     Route::post('/signin', [UserController::class, 'postSignIn']);
     Route::post('/signup', 'App\Http\Controllers\UserController@postSignUp');
