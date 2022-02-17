@@ -41,3 +41,7 @@
     background-color: #d1f9da;
     color: green;
 }
+
+.interactions a {
+    text-decoration: none;
+}
